@@ -48,7 +48,7 @@ User.init(
                 // to database
                 // hash by a value of 10, the higher the better but also more 
                 // time to execute.
-                newUser.password = await bcrypt.hash(newUserData.password, 10);
+                newUser.password = await bcrypt.hash(newUser.password, 10);
                 // now continue with the call to add the user to the database.
                 return newUser;
             }
