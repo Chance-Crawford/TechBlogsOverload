@@ -31,4 +31,43 @@ router.get('/', (req, res)=>{
     });
 });
 
+// renders HTML page for a single post and passes the post's data
+router.get('/post/:id', (req, res)=>{
+    Post.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: ['id', 'title', 'post_text', 'created_at'],
+        include: [
+            // includes comments associated with this post
+            {
+                model: Comment,
+                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                // user who made each comment
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
+            // includes username of user who made this post
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    })
+    .then(dbPostData => {
+        if (!dbPostData) {
+          res.status(404).json({ message: 'No post found with this id' });
+          return;
+        }
+  
+        // serialize the data to regular object
+        const post = dbPostData.get({ plain: true });
+
+        // render single post page and pass in the data from the database
+        res.render('single-post', {post});
+    })
+});
+
 module.exports = router;

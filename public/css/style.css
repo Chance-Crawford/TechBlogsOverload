@@ -9,6 +9,10 @@ header{
     z-index: 3;
 }
 
+a{
+    transition: color .5s;
+}
+
 a,
 a:hover{
     color: black;
@@ -49,4 +53,20 @@ h1{
     z-index: 1;
     min-height: calc(100vh - 118.39px);
     background-color: #D4FFEF;
+}
+
+.post-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.25rem;
+}
+
+.post-list li{
+    width: 100%;
+    margin-top: 20px;
+    background-color: #F1F1F1;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid green;
 }
