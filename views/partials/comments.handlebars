@@ -1,0 +1,13 @@
+<div class="comments">
+    {{#each this}}
+    <div class="mt-3 comment">
+        <div class="divider">
+            <p class="m-0 font-weight-bold">{{user.username}}</p>
+            <p class="m-0 mb-1 font-italic">{{formatDate created_at}}</p>
+        </div>
+        <div>
+            <p class="m-0 mt-1">{{comment_text}}</p>
+        </div>
+    </div>
+    {{/each}}
+</div>

@@ -1,10 +1,12 @@
-<section class="w-50 mt-4 p-2">
-            <ol class="w-100 h-100 post-list">
-                {{#each posts as |post|}}
-                <li>
-                    {{!-- partial to create each blog post element --}}
-                    {{> post-info post}}
-                </li>
-                {{/each}}
-            </ol>
+<section class="p-3 d-flex justify-content-center w-100 main-content">
+    <div class="w-50 mt-4 p-2">
+                <ol class="w-100 post-list">
+                    {{#each posts as |post|}}
+                    <li>
+                        {{!-- partial to create each blog post element --}}
+                        {{> post-info post}}
+                    </li>
+                    {{/each}}
+                </ol>
+    </div>
 </section>

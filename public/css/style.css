@@ -70,3 +70,52 @@ h1{
     padding: 15px;
     border: 1px solid green;
 }
+
+/* single post styles */
+
+.single-post-container{
+    background-color: #F1F1F1;
+    border-radius: 15px;
+    padding: 15px;
+    border: 2px solid green;
+}
+
+.larger-font{
+    font-size: 1.25rem;
+}
+
+.single-post-container p{
+    font-size: 1.25rem;
+}
+
+.comment-textarea{
+    width: 35%;
+    padding: .5rem .75rem;
+}
+
+.comments{
+    width: 35%;
+}
+
+.comment{
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid green;
+}
+
+.divider{
+    border-bottom: 1px lightgrey solid;
+}
+
+.submit-btn{
+    padding: .5rem .75rem;
+    border-radius: 10px;
+    background-color: #64DFB1;
+    border: none;
+    transition: background-color .75s;
+}
+
+.submit-btn:hover{
+    background-color: aqua;
+}
