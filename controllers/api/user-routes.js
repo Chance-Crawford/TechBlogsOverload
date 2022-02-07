@@ -70,7 +70,7 @@ router.post('/', (req, res)=>{
         console.log(err);
         res.status(500).json(err);
     });
-})
+});
 
 // delete a user from the database
 router.delete('/:id', (req, res) => {
