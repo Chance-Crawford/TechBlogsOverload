@@ -28,6 +28,28 @@ async function loginHandler(event){
 
 async function signupHandler(event){
     event.preventDefault();
+
+    const username = document.querySelector('#username-signup').value.trim();
+    const password = document.querySelector('#password-signup').value.trim();
+
+    if(username && password){
+        const response = await fetch('/api/users', {
+            method: 'post',
+            body: JSON.stringify({
+                username,
+                password
+            }),
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        if (response.ok) {
+            // if user was logged in successfully, create a session
+            // and take them to the user dashboard.
+            document.location.replace('/');
+        } else {
+          alert(response.statusText);
+        }
+    }
 }
 
 // listen for form submits

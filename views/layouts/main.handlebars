@@ -16,7 +16,7 @@
                 <a href="/"><li>Home</li></a>
                 {{#if loggedIn}}
                 <a href="/dashboard"><li>Dashboard</li></a>
-                <li class="logout">Logout</li>
+                <li class="logout" id="logout">Logout</li>
                 {{else}}
                 <a href="/login"><li>Login/Create Account</li></a>
                 {{/if}}
@@ -29,5 +29,9 @@
       whatever is passed in when the page is rendered in JavaScript. --}}
         {{{body}}}
     </main>
+
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 </html>

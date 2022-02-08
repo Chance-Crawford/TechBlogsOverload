@@ -66,7 +66,17 @@ router.post('/', (req, res)=>{
     })
     // Make a user session after the user is created,
     // automatically logs them in
-    .then(dbUserData => res.json(dbUserData))
+    .then(dbUserData => {
+        // create a session for the user and log them in.
+        req.session.save(() => {
+            // capture session variables to use later
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
+        
+            res.json(dbUserData);
+        });
+    })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -107,6 +117,20 @@ router.post('/login', (req, res)=>{
             res.json({ user: dbUserData, message: 'You are now logged in!' });
         });
     })
+});
+
+// logout a user who is logged out
+router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+        // destroys the user's session
+        req.session.destroy(()=>{
+            res.status(204).end();
+        })
+    }
+    else {
+        // if there is no session to destroy, respond with 404
+        res.status(404).end();
+    }
 });
 
 // delete a user from the database
