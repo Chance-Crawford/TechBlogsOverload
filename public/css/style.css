@@ -71,6 +71,11 @@ h1{
     border: 1px solid green;
 }
 
+.w-35{
+    width: 35%;
+}
+
+
 /* single post styles */
 
 .single-post-container{
