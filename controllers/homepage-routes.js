@@ -23,7 +23,10 @@ router.get('/', (req, res)=>{
     .then(dbPostData => {
         // serialize data in the array to normal objects
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('home', { posts });
+        res.render('home', { 
+            posts,
+            loggedIn: req.session.loggedIn
+        });
     })
     .catch(err => {
       console.log(err);
@@ -66,8 +69,23 @@ router.get('/post/:id', (req, res)=>{
         const post = dbPostData.get({ plain: true });
 
         // render single post page and pass in the data from the database
-        res.render('single-post', {post});
+        res.render('single-post', {
+            post,
+            loggedIn: req.session.loggedIn
+        });
     })
+});
+
+// renders login page html template
+router.get('/login', (req, res) => {
+    // if user already logged in, redirect to homepage
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    
+    // if not already logged in, send to login/create account page
+    res.render('login');
 });
 
 module.exports = router;

@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const req = require('express/lib/request');
 const { User, Post, Comment } = require('../../models');
 
 // return all users in the database
@@ -70,6 +71,42 @@ router.post('/', (req, res)=>{
         console.log(err);
         res.status(500).json(err);
     });
+});
+
+// login a pre existing user by comparing the password to the hashed password
+// in the database.
+router.post('/login', (req, res)=>{
+    User.findOne({
+        where: {
+            // username in the database is unique
+            username:  req.body.username
+        }
+    })
+    .then(dbUserData =>{
+        if (!dbUserData) {
+            res.status(400).json({ message: 'No user with that username!' });
+            return;
+        }
+
+        // compare password to the hashed password using the custom function,
+        // returns a boolean on whether they match or not
+        const validPassword = dbUserData.checkPassword(req.body.password);
+
+        if (!validPassword) {
+            res.status(400).json({ message: 'Incorrect password!' });
+            return;
+        }
+
+        // if password is correct, log user in by creating a session
+        req.session.save(()=>{
+            // store user info in these session variables for when it is needed
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
+
+            res.json({ user: dbUserData, message: 'You are now logged in!' });
+        });
+    })
 });
 
 // delete a user from the database

@@ -9,7 +9,20 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    {{> header}}
+    <header class="d-flex w-100 justify-content-between align-items-center p-4 flex-wrap">
+        <a href="/"><h1>TechBlogsOverload</h1></a>
+        <nav class="d-flex nav-list">
+            <ul>
+                <a href="/"><li>Home</li></a>
+                {{#if loggedIn}}
+                <a href="/dashboard"><li>Dashboard</li></a>
+                <li class="logout">Logout</li>
+                {{else}}
+                <a href="/login"><li>Login/Create Account</li></a>
+                {{/if}}
+            </ul>
+        </nav>
+    </header>
 
     <main>
         {{!-- Handlebars will replace {{{body}}} with 

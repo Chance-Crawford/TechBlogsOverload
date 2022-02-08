@@ -10,6 +10,7 @@
             <p>{{post.post_text}}</p>
         </div>
         <hr>
+        {{#if loggedIn}}
         <form class="comment-form mb-3">
             <div>
                 <textarea name="comment-body" class="larger-font comment-textarea" rows="4"></textarea>
@@ -18,6 +19,8 @@
                 <button type="submit" class="larger-font submit-btn">Add Comment</button>
             </div>
         </form>
+        {{/if}}
+        {{!-- partial to list all comments on the post --}}
         {{> comments post.comments}}
     </div>
 </section>

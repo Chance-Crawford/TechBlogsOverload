@@ -119,3 +119,27 @@ h1{
 .submit-btn:hover{
     background-color: aqua;
 }
+
+/* login page styles */
+
+.form-container{
+    background-color: #F1F1F1;
+    font-size: 1.25rem;
+    width: 35%;
+    border-radius: 15px;
+    padding: 25px;
+    border: 2px solid green;
+}
+
+.form-container label{
+    font-weight: bold;
+}
+
+.input-form{
+    width: 100%;
+    padding: .5rem .75rem;
+}
+
+.login-form{
+    border-bottom: 1px lightgray solid;
+}
