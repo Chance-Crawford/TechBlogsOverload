@@ -67,13 +67,24 @@ router.get('/post/:id', (req, res)=>{
   
         // serialize the data to regular object
         const post = dbPostData.get({ plain: true });
+        // sort comments by descending order.
+        post.comments = post.comments.reverse();
 
+        // return post with sorted comments
+        return post;
+    })
+    // render the page with the post info
+    .then(post=>{
         // render single post page and pass in the data from the database
         res.render('single-post', {
             post,
             loggedIn: req.session.loggedIn
         });
     })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 // renders login page html template

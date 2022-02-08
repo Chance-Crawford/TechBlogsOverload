@@ -11,7 +11,7 @@
         </div>
         <hr>
         {{#if loggedIn}}
-        <form class="comment-form mb-3">
+        <form id="comment-form" class="comment-form mb-3">
             <div>
                 <textarea name="comment-body" class="larger-font comment-textarea" rows="4"></textarea>
             </div>
@@ -24,3 +24,7 @@
         {{> comments post.comments}}
     </div>
 </section>
+
+{{#if loggedIn}}
+<script src="/js/comment.js"></script>
+{{/if}}
