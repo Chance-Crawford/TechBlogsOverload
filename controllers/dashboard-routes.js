@@ -41,4 +41,31 @@ router.get('/', withAuth, (req, res)=>{
     });
 });
 
+// edit a blog post
+router.get('/edit/:id', withAuth, (req, res)=>{
+    Post.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: ['id', 'title', 'post_text', 'created_at']
+    })
+    .then(dbPostData => {
+        if(!dbPostData){
+            res.status(404).json({ message: 'No post found with this id' });
+            return;
+        }
+
+        const post = dbPostData.get({ plain: true });
+
+        res.render('edit-post', {
+            post,
+            loggedIn: req.session.loggedIn
+        });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 module.exports = router;

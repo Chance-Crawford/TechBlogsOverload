@@ -19,7 +19,7 @@ async function loginHandler(event){
         if (response.ok) {
             // if user was logged in successfully, create a session
             // and take them to the user dashboard.
-            document.location.replace('/');
+            document.location.replace('/dashboard');
         } else {
           alert(response.statusText);
         }
@@ -45,7 +45,7 @@ async function signupHandler(event){
         if (response.ok) {
             // if user was logged in successfully, create a session
             // and take them to the user dashboard.
-            document.location.replace('/');
+            document.location.replace('/dashboard');
         } else {
           alert(response.statusText);
         }

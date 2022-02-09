@@ -69,16 +69,18 @@ router.get('/:id', (req, res)=>{
 // create a new post, add it to the database
 router.post('/', (req, res)=>{
     // create post in database from the request
-    Post.create({
-        title: req.body.title,
-        post_text: req.body.post_text,
-        user_id: req.body.user_id
-    })
-    .then(dbPostData => res.json(dbPostData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+    if(req.session){
+        Post.create({
+            title: req.body.title,
+            post_text: req.body.post_text,
+            user_id: req.session.user_id
+        })
+        .then(dbPostData => res.json(dbPostData))
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });
+    }
 });
 
 // update an existing post with new info
