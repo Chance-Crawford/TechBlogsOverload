@@ -32,6 +32,11 @@ async function signupHandler(event){
     const username = document.querySelector('#username-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
 
+    if(password.length < 6){
+        alert("Password must be at least 6 characters!");
+        return;
+    }
+
     if(username && password){
         const response = await fetch('/api/users', {
             method: 'post',
