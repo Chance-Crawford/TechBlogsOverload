@@ -37,7 +37,10 @@ Comment.init(
             references: {
                 model: 'post',
                 key: 'id'
-            }
+            },
+            // when a post gets deleted, all comments associated with
+            // that post will be deleted as well
+            onDelete: 'CASCADE'
         }
     },
     {
