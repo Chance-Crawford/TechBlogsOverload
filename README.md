@@ -9,7 +9,7 @@ Backend database with hashed user passwords and built-in security. A user can lo
 ## Made With
 HTML, CSS, Bootstrap, JavaScript, Node.js, Express.js, Handlebars.js, Sequelize, MySQL, bcrypt, dotenv, Express-session, Connect-session-sequelize
 
-![Tech blogs overload](./images/Capture.PNG)
+![Tech blogs overload](./images/Capture2.PNG)
 
 ## Demo Link
 https://immense-coast-31920.herokuapp.com/
