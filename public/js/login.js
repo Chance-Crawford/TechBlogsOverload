@@ -38,6 +38,11 @@ async function signupHandler(event){
     }
 
     if(username && password){
+        if(password.length < 6){
+            alert('Password must be 6 or more characters');
+            return;
+        }
+
         const response = await fetch('/api/users', {
             method: 'post',
             body: JSON.stringify({

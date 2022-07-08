@@ -26,7 +26,7 @@ const hbs = exphbs.create({ helpers });
 const app = express();
 // This uses Heroku's process.env.PORT 
 // value for the port when deployed and 3001 when run locally.
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3005;
 
 // This code sets up an Express.js session and connects the session to our Sequelize 
 // MySQL database.

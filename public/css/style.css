@@ -2,8 +2,16 @@
     box-sizing: border-box;
 }
 
+:root{
+    --primary: #003559;
+    --primary-light: #003f69;
+    --secondary: #B9D6F2;
+    --tertiary: #061A40;
+}
+
 header{
     -webkit-box-shadow: 0px 2px 15px 5px rgba(0,0,0,0.67); 
+    background-color: var(--primary);
     box-shadow: 0px 2px 15px 5px rgba(0,0,0,0.67);
     position: relative;
     z-index: 3;
@@ -20,7 +28,9 @@ a:hover{
 }
 
 h1{
-    font-size: 3.25rem;
+    font-size: 2rem;
+    margin: 0;
+    color: white;
 }
 
 .nav-list ul{
@@ -35,24 +45,35 @@ h1{
 .nav-list ul a li,
 .logout{
     cursor: pointer;
-    color: black;
-    margin: 0 0 0 30px;
+    color: white;
+    font-weight: bold;
+    margin: 0 0 0 20px;
     padding: 10px 20px;
-    border-radius: 10px;
-    background-color: #64DFB1;
-    transition: background-color 1s;
+    transition: color .25s;
 }
 
 .nav-list ul a li:hover,
 .logout:hover{
-    background-color: aqua;
+    color: rgb(211, 211, 211);
+}
+
+.blue-heading{
+    color: #0075c4;
+}
+
+.blue-heading:hover{
+    color: #005a96;
+}
+
+.blue-comment-heading{
+    color: #006ab1;
 }
 
 .main-content{
     position: relative;
     z-index: 1;
     min-height: calc(100vh - 118.39px);
-    background-color: #D4FFEF;
+    background-color: rgb(211, 211, 211);
 }
 
 .post-list{
@@ -66,9 +87,9 @@ h1{
     width: 100%;
     margin-top: 20px;
     background-color: #F1F1F1;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 15px;
-    border: 1px solid green;
+    border: 1px solid var(--tertiary);
 }
 
 .w-35{
@@ -80,9 +101,9 @@ h1{
 
 .single-post-container{
     background-color: #F1F1F1;
-    border-radius: 15px;
+    border-radius: 6px;
     padding: 15px;
-    border: 2px solid green;
+    border: 1px solid var(--primary-light);
 }
 
 .larger-font{
@@ -106,7 +127,8 @@ h1{
     background-color: white;
     border-radius: 10px;
     padding: 10px;
-    border: 1px solid green;
+    -webkit-box-shadow: 0px 0px 8px -1px rgba(0,0,0,0.35); 
+    box-shadow: 0px 0px 8px -1px rgba(0,0,0,0.35);
 }
 
 .divider{
@@ -115,14 +137,15 @@ h1{
 
 .submit-btn{
     padding: .5rem .75rem;
+    color: white;
     border-radius: 10px;
-    background-color: #64DFB1;
+    background-color: var(--primary);
     border: none;
-    transition: background-color .75s;
+    transition: background-color .25s;
 }
 
 .submit-btn:hover{
-    background-color: aqua;
+    background-color: var(--primary-light);
 }
 
 /* login page styles */
