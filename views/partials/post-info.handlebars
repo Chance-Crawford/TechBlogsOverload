@@ -5,8 +5,8 @@
     <div>
         <p class="m-0 mt-2">By. {{user.username}}</p>
     </div>
-    <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-between align-items-center post-date-and-comment-holder">
         <p class="m-0 mt-2 font-weight-light font-italic">Posted On: {{formatDate created_at}}</p>
-        <a onclick='event.stopPropagation();' href="/post/{{id}}" class="mt-2 blue-heading font-weight-bold">Comments({{comments.length}})</a>
+        <a onclick='event.stopPropagation();' href="/post/{{id}}" class="mt-2 blue-heading font-weight-bold comment-a">Comments({{comments.length}})</a>
     </div>
 </article>

@@ -1,10 +1,10 @@
-<section class="d-flex p-5 w-100 main-content">
+<section class="d-flex p-5 w-100 main-content edit-post-section">
     <div class="w-100 single-post-container">
         <div>
             <h2>Edit Blog Post</h2>
         </div>
         {{#if loggedIn}}
-        <div class="w-35 mt-3">
+        <div class="w-35 mt-3 edit-form-holder">
             <form id="post-form" class="larger-font">
                 <div>
                     <label for="post-title" class="font-weight-bold">Title:</label><br>
@@ -15,7 +15,7 @@
                     <textarea name="post-body" id="post-body" rows="4" class="input-form">{{post.post_text}}</textarea>
                 </div>
                 <div class="text-right">
-                    <button type="submit" class="w-35 mt-3 mb-2 submit-btn">Update Post</button>
+                    <button type="submit" class="w-35 mt-3 mb-2 submit-btn update-post-btn">Update Post</button>
                 </div>
             </form>
         </div>

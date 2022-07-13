@@ -106,6 +106,10 @@ h1{
     border: 1px solid var(--primary-light);
 }
 
+.add-comment-btn-holder{
+    width: 35%;
+}
+
 .larger-font{
     font-size: 1.25rem;
 }
@@ -130,6 +134,7 @@ h1{
     -webkit-box-shadow: 0px 0px 8px -1px rgba(0,0,0,0.35); 
     box-shadow: 0px 0px 8px -1px rgba(0,0,0,0.35);
     border: 1px solid var(--primary-light);
+    word-wrap: break-word;
 }
 
 .divider{
@@ -179,4 +184,160 @@ h1{
 
 .delete-post{
     cursor: pointer;
+}
+
+/* media queries */
+
+@media only screen and (max-width: 1350px) {
+    .edit-form-holder{
+        width: 70% !important;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+
+    /* main */
+
+    .nav-list{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-list ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-title-div{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    /* home */
+
+    .post-home-holder{
+        width: 80% !important;
+    }
+
+    /* single post */
+
+    .comment-textarea{
+        width: 80%;
+    }
+
+    .add-comment-btn-holder{
+        width: 80%;
+    }
+
+    .comment{
+        margin-bottom: .5rem;
+        margin-top: 2rem !important;
+    }
+
+    .comments{
+        width: 70%;
+    }
+    
+    .submit-btn{
+        font-size: 1rem;
+    }
+
+    .single-section{
+        padding: 2rem !important;
+    }
+
+    .single-post-container p{
+        font-size: 1.1rem;
+    }
+
+    /* dashboard */
+
+    .create-form-holder,
+    .user-post-holder{
+        width: 80% !important;
+    }
+
+    .dash-section{
+        padding: 2rem !important;
+    }
+
+    /* edit post */
+
+    .edit-post-section{
+        padding: 1.5rem !important;
+    }
+
+    .edit-form-holder{
+        width: 80% !important;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .post-home-holder{
+        width: 100% !important;
+    }
+
+    .nav-list ul a,
+    .nav-list ul a li{
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .logout{
+        margin: 0;
+    }
+
+    .single-section{
+        padding: 1.75rem !important;
+    }
+
+    .comment-textarea{
+        width: 100%;
+    }
+
+    .comment-a{
+        font-size: 1.1rem;
+    }
+
+    .add-comment-btn-holder{
+        width: 100%;
+    }
+
+    .comments{
+        width: 90%;
+    }
+
+    .create-form-holder,
+    .user-post-holder{
+        width: 100% !important;
+    }
+
+    .dash-section{
+        padding: 1.25rem !important;
+    }
+
+    .create-post-btn{
+        width: 45% !important;
+    }
+
+    .post-date-and-comment-holder{
+        flex-wrap: wrap;
+        justify-content: left;
+    }
+
+    .post-date-and-comment-holder p{
+        width: 100%;
+    }
+
+    .edit-form-holder{
+        width: 100% !important;
+    }
+
+    .update-post-btn{
+        width: 45% !important;
+    }
 }
