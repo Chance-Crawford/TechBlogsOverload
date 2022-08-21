@@ -1,7 +1,7 @@
 <section class="d-flex p-5 w-100 main-content dash-section">
     <div class="w-100 single-post-container">
         <div>
-            <h2>Create A New Blog Post</h2>
+            <h2 class="main-heading">Create A New Blog Post</h2>
         </div>
         <div class="w-35 mt-3 create-form-holder">
             <form id="post-form" class="larger-font">
@@ -20,10 +20,10 @@
         </div>
         <hr>
         <div>
-            <h2>Your Posts</h2>
+            <h2 class="main-heading">Your Posts</h2>
             <ol class="w-35 post-list user-post-holder" id="user-posts">
                 {{#each posts as |post|}}
-                <li class="bg-white">
+                <li class="container-bg">
                     {{!-- partial to create each blog post element --}}
                     {{> post-info post}}
                     <div class="d-flex mt-3 font-weight-bold">

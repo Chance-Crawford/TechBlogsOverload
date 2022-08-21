@@ -6,9 +6,10 @@
     --primary: #003559;
     --primary-light: #003f69;
     --secondary: #444444;
-    --tertiary: white;
+    --tertiary: #d4d4d4;
     --main-heading: rgb(212, 212, 212);
     --main-heading-hov: rgb(36, 36, 36);
+    --sub-txt: #606060;
     --container-bg: #363636;
 }
 
@@ -50,6 +51,10 @@ h1{
     color: white;
 }
 
+label{
+    color: var(--sub-txt);
+}
+
 .nav-list ul{
     display: flex;
     font-size: 1.5rem;
@@ -78,7 +83,7 @@ h1{
     color: var(--main-heading);
 }
 
-.main-heading:hover{
+.main-heading-hov:hover{
     color: var(--main-heading-hov);
 }
 
@@ -120,8 +125,9 @@ h1{
 }
 
 .disabled-textarea{
-    background-color: #abc9e6;
-    border: 1px solid darkblue;
+    color: var(--tertiary);
+    background-color: var(--sub-txt);
+    border: 1px solid var(--tertiary);
 }
 
 .add-comment-btn-holder{
@@ -150,13 +156,17 @@ h1{
 }
 
 .comment{
-    background-color: white;
+    background-color: var(--container-bg);
     border-radius: 10px;
     padding: 10px;
     -webkit-box-shadow: 0px 0px 8px -1px rgba(0,0,0,0.35); 
     box-shadow: 0px 0px 8px -1px rgba(0,0,0,0.35);
-    border: 1px solid var(--primary-light);
+    border: 3px solid var(--tertiary);
     word-wrap: break-word;
+}
+
+.sub-txt{
+    color: var(--sub-txt)
 }
 
 .divider{
@@ -184,16 +194,12 @@ h1{
 }
 
 .form-container{
-    background-color: #F1F1F1;
+    background-color: var(--container-bg);
     font-size: 1.25rem;
     width: 35%;
     border-radius: 15px;
     padding: 25px;
-    border: 2px solid green;
-}
-
-.dark-border{
-    border: 2px solid darkblue;
+    border: 2px solid var(--tertiary);
 }
 
 .form-container label{

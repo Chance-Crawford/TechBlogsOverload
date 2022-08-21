@@ -21,7 +21,7 @@ async function loginHandler(event){
             // and take them to the user dashboard.
             document.location.replace('/dashboard');
         } else {
-          alert(response.statusText);
+          alert('Incorrect Information');
         }
     }
 }
@@ -31,11 +31,6 @@ async function signupHandler(event){
 
     const username = document.querySelector('#username-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
-
-    if(password.length < 6){
-        alert("Password must be at least 6 characters!");
-        return;
-    }
 
     if(username && password){
         if(password.length < 6){
