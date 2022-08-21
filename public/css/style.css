@@ -337,6 +337,15 @@ label{
         margin-bottom: 1rem;
     }
 
+    .browse-contain{
+        transform: translateY(-20%);
+    }
+
+    .browse-contain h2{
+        padding: 1rem;
+        font-size: 2.5rem;
+    }
+
     /* home */
 
     .post-home-holder{
@@ -405,6 +414,15 @@ label{
 @media only screen and (max-width: 550px) {
     .post-home-holder{
         width: 100% !important;
+    }
+
+    .browse-contain{
+        transform: translateY(-10%);
+    }
+
+
+    .browse-contain h2{
+        font-size: 1.75rem;
     }
 
     .nav-list ul a,
