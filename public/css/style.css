@@ -55,6 +55,11 @@ a:hover{
     
 }
 
+header,
+.intro{
+    font-family: "Segoe UI", "Roboto","Helvetica Neue",Arial,"Noto Sans",sans-serif;
+}
+
 h1{
     font-size: 2rem;
     margin: 0;
