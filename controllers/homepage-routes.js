@@ -25,7 +25,8 @@ router.get('/', (req, res)=>{
         const posts = dbPostData.map(post => post.get({ plain: true }));
         res.render('home', { 
             posts,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            onHome: true
         });
     })
     .catch(err => {
@@ -78,7 +79,8 @@ router.get('/post/:id', (req, res)=>{
         // render single post page and pass in the data from the database
         res.render('single-post', {
             post,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            onHome: false
         });
     })
     .catch(err => {
@@ -96,7 +98,9 @@ router.get('/login', (req, res) => {
     }
     
     // if not already logged in, send to login/create account page
-    res.render('login');
+    res.render('login', {
+        onHome: false
+    });
 });
 
 module.exports = router;

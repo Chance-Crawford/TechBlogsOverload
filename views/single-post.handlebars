@@ -1,13 +1,13 @@
 <section class="d-flex p-5 w-100 main-content single-section">
     <div class="w-100 single-post-container">
         <div>
-            <h2 class="font-weight-bold">{{post.title}}</h2>
+            <h2 class="font-weight-bold sub-txt">{{post.title}}</h2>
             <p class="m-0 mt-2">By. {{post.user.username}}</p>
             <p class="m-0 mt-2 font-italic">Posted On: {{formatDate post.created_at}}</p>
         </div>
         <hr>
         <div>
-            <p>{{post.post_text}}</p>
+            <p class="sub-txt">{{post.post_text}}</p>
         </div>
         <hr>
         {{#if loggedIn}}
@@ -17,6 +17,12 @@
             </div>
             <div class=" mt-2 text-right add-comment-btn-holder">
                 <button type="submit" class="larger-font submit-btn">Add Comment</button>
+            </div>
+        </form>
+        {{else}}
+        <form id="comment-form" class="comment-form mb-3">
+            <div>
+                <textarea name="comment-body" class="larger-font comment-textarea disabled-textarea" disabled rows="4">Must be logged in to post a comment!</textarea>
             </div>
         </form>
         {{/if}}
