@@ -11,6 +11,7 @@
     --main-heading-hov: rgb(36, 36, 36);
     --sub-txt: #606060;
     --container-bg: #363636;
+    --light-btn-transition: rgb(24, 113, 230);
 }
 
 header{
@@ -66,6 +67,7 @@ label{
 
 .nav-list ul a li,
 .logout{
+    position: relative;
     cursor: pointer;
     color: white;
     font-weight: bold;
@@ -74,9 +76,73 @@ label{
     transition: color .25s;
 }
 
-.nav-list ul a li:hover,
-.logout:hover{
-    color: var(--secondary);
+.nav-list ul a li::after,
+.logout::after{
+    content: '';
+    width: 0;
+    height: 4px;
+    background-color: var(--light-btn-transition);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: width .4s, background-color .5s;
+}
+
+.nav-list ul a li:hover::after,
+.logout:hover::after{
+    background-color: var(--primary-light);
+    width: 100%;
+}
+
+.browse-contain{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+    color: var(--main-heading);
+}
+
+.browse-contain h2{
+    font-size: 3.25rem;
+    margin-bottom: 2rem;
+}
+
+.browse-contain a{
+    position: relative;
+    overflow: hidden;
+    color: var(--main-heading);
+    background: transparent;
+    font-size: 1.35rem;
+    font-weight: bold;
+    padding: .5rem 2.25rem;
+    border-radius: 30px;
+    border: 2px solid var(--tertiary);
+    transition: border .2s;
+}
+
+.browse-contain a:hover{
+    border: 2px solid transparent;
+}
+
+.browse-span{
+    opacity: 0;
+    background: var(--light-btn-transition);
+    height: 100%;
+    width: 0;
+    position: absolute;
+    z-index: -2;
+    bottom: 0;
+    left: 0;
+    border-radius: 30px;
+    transition: width .4s, background .5s, opacity .45s;
+}
+
+.browse-contain a:hover .browse-span{
+    opacity: 1;
+    width: 100%;
+    background: var(--primary-light);
+    transition: width .4s, background .5s, opacity .19s;
 }
 
 .main-heading{
