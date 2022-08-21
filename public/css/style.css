@@ -8,15 +8,24 @@
     --secondary: #444444;
     --tertiary: #d4d4d4;
     --main-heading: rgb(212, 212, 212);
-    --main-heading-hov: rgb(36, 36, 36);
+    --main-heading-hov: rgb(180, 180, 180);
     --sub-txt: #606060;
     --container-bg: #363636;
-    --light-btn-transition: rgb(24, 113, 230);
+    --light-btn-transition: rgb(110, 110, 110);
+    --input-bg: rgb(226, 226, 226);
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 header{
     position: relative;
     z-index: 3;
+}
+
+textarea, input{
+    background-color: var(--input-bg);
 }
 
 .header-main{
@@ -118,7 +127,7 @@ label{
     padding: .5rem 2.25rem;
     border-radius: 30px;
     border: 2px solid var(--tertiary);
-    transition: border .2s;
+    transition: border .3s;
 }
 
 .browse-contain a:hover{
@@ -135,14 +144,14 @@ label{
     bottom: 0;
     left: 0;
     border-radius: 30px;
-    transition: width .4s, background .5s, opacity .45s;
+    transition: width .4s, background .5s, opacity .34s;
 }
 
 .browse-contain a:hover .browse-span{
     opacity: 1;
     width: 100%;
     background: var(--primary-light);
-    transition: width .4s, background .5s, opacity .19s;
+    transition: width .4s, background .5s, opacity .25s;
 }
 
 .main-heading{
